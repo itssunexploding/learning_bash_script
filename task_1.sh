@@ -1,13 +1,12 @@
 #!/bin/bash
 read fileName 
-filesDir=$(find '$fileName' /home "$PWD" -type f)
+filesDir=$(find /home -name $fileName)
 filePresence=0
 IFS=$'\n'
 for var in $filesDir
     do
         if [[ "$var" == *"$fileName"* ]]
             then
-                #echo $var
                 echo $(cat $var)
                 filePresence=1
         fi
