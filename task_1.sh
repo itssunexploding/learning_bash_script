@@ -1,6 +1,6 @@
 #!/bin/bash
 read fileName 
-filesDir=$(find $fileName /home "$PWD" -type f)
+filesDir=$(find '$fileName' /home "$PWD" -type f)
 filePresence=0
 IFS=$'\n'
 for var in $filesDir
