@@ -7,7 +7,7 @@ for var in $filesDir
     do
         if [[ "$var" == *"$fileName"* ]]
             then
-                echo $(cat $var)
+                cat $var
                 filePresence=1
         fi
     done
