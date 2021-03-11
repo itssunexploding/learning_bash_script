@@ -1,17 +1,16 @@
 #!/bin/bash
 read fileName 
-filesDir=$(find /home -name $fileName)
-filePresence=0
+filesDir=$(find /home -name $fileName 2>/dev/null)
 IFS=$'\n'
-for var in $filesDir
-    do
-        if [[ "$var" == *"$fileName"* ]]
-            then
-                cat $var
-                filePresence=1
-        fi
-    done
-if [ $filePresence -eq 0 ]
+if [ -z $filesDir ]
     then
         echo "$fileName" | cut -c 5-
+    else    
+        for var in $filesDir
+            do
+                if [[ "$var" == *"$fileName"* ]]
+                    then
+                        cat $var
+                fi
+            done
 fi
