@@ -1,6 +1,6 @@
 #!/bin/bash
 read fileName 
-filesDir=$(find /home -name $fileName 2>/dev/null)
+filesDir=$(find /home -name "$fileName" 2>/dev/null)
 IFS=$'\n'
 if [ -z $filesDir ]
     then
