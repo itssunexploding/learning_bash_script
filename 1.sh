@@ -2,11 +2,11 @@
 
 # Объединяет все файлы из введённой директории
 
-dirName=$(find /home -type d -name "$1" 2>/dev/null)
+dirPath=$(find /home -type d -name "$1" 2>/dev/null)
 
-cd $dirName
+cd $dirPath
 
-for file in `ls $dirName`
+for file in `ls $dirPath`
 do
   if [[  "$file" =~ \.txt$ ]]
   then
