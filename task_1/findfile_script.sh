@@ -2,10 +2,6 @@
 
 source ./lib/file_helper.sh
 
-#lengthCheckAndCut HOME
-
-#echo 'Enter file name:'
-
 read -p "Enter file name:" strFileName
 
 # We find needed file's name in current directory
@@ -21,7 +17,6 @@ if [[ -z $arrFileDir ]]
     then
         echo 'No such file in directory'
         lengthCheckAndCut $strFileName
-        #echo "$strFileName" | cut -c 5-
     else    
         for var in $arrFileDir
             do
